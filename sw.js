@@ -1,11 +1,10 @@
-const CACHE_NAME = 'gl-portfolio-v1';
+const CACHE_NAME = 'gl-portfolio-v2'; // Incremented version to force an upgrade
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
   '/favicon.svg',
-  '/profile.JPEG',
-  'https://cdn.tailwindcss.com'
+  '/profile-clean.png'
 ];
 
 // Installation Lifecycle Event: Cache the core UI skeleton shell immediately
