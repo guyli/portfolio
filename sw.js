@@ -1,18 +1,23 @@
-const CACHE_NAME = 'gl-portfolio-v2'; // Incremented version to force an upgrade
+const CACHE_NAME = 'gl-portfolio-v3'; // Incremented to bust the old broken cache
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
-  '/manifest.json',
-  '/favicon.svg',
-  '/profile-clean.png'
+  '/manifest.json'
 ];
 
 // Installation Lifecycle Event: Cache the core UI skeleton shell immediately
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] Pre-caching structural assets securely');
-      return cache.addAll(ASSETS_TO_CACHE);
+      console.log('[Service Worker] Pre-caching structural assets safely');
+      // Using individual map catches ensures one missing asset won't crash the entire installation
+      return Promise.all(
+        ASSETS_TO_CACHE.map((url) => {
+          return cache.add(url).catch((err) => {
+            console.error(`[Service Worker] Failed to cache asset: ${url}`, err);
+          });
+        })
+      );
     })
   );
   self.skipWaiting();
