@@ -18,6 +18,16 @@
     <meta property="og:image" content="https://guylivne.com/profile-clean.png">
     <meta property="og:url" content="https://guylivne.com/">
     <meta property="og:site_name" content="Guy Livne Portfolio">
+
+    <!-- Progressive Web App Fundamental Settings -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#9eb8f0">
+
+    <!-- iOS Specific Web App Enhancements & Safari Fallbacks -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GL Portfolio">
+    <link rel="apple-touch-icon" href="/icon-192.png">
     
     <!-- Profile Specific Schema Extensions -->
     <meta property="profile:first_name" content="Guy">
@@ -598,6 +608,20 @@
                 history.replaceState(null, null, '#blog');
             }
             window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+    </script>
+    <!-- Runtime Background Service Worker Registration Script Engine -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('PWA Service Worker registered successfully with scope:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.error('PWA Service Worker registration process encountered a failure:', error);
+                    });
+            });
         }
     </script>
 </body>
