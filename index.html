@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization Basics -->
+    <title>Guy Livne | Product Engineering Leader & Web Architect</title>
+    <meta name="description" content="Portfolio and technical insights of Guy Livne, Senior Engineering Manager specializing in UI architecture, Next.js micro-frontends, cloud-native systems, and enterprise AI platform delivery.">
+    <meta name="keywords" content="Guy Livne, Engineering Manager, UI Architect, Next.js, Micro-frontends, PwC, Chewy, React Engineer, California Tech Leader">
+
+    <!-- Open Graph / LinkedIn Preview Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://guylivne.com/">
+    <meta property="og:title" content="Guy Livne | Product Engineering Leader">
+    <meta property="og:description" content="10+ years of experience transforming rigid legacy architectures into high-scale, revenue-driving modern web platforms.">
+    <meta property="og:image" content="profile-clean.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" onclick="switchTab('portfolio')" class="text-md font-bold tracking-tight text-slate-900 hover:text-blue-600 transition">GL</a>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <button id="nav-portfolio" onclick="switchTab('portfolio')" class="text-blue-600 font-semibold transition">Portfolio</button>
+                <button id="nav-blog" onclick="switchTab('blog')" class="text-slate-500 hover:text-slate-900 transition">Insights Blog</button>
+                <a href="mailto:guylivne5@gmail.com" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs hover:bg-slate-800 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Profile Section -->
+    <header class="max-w-4xl mx-auto px-6 pt-12 pb-8">
+        <div class="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-8 pb-8 border-b border-slate-200">
+            <div class="space-y-4 max-w-2xl">
+                <div>
+                    <h1 class="text-4xl font-extrabold tracking-tight text-slate-900">Guy Livne</h1>
+                    <p class="text-xl font-medium text-blue-600 mt-1">Engineering Manager | Product Engineering & Web Platforms</p>
+                </div>
+                <p class="text-slate-500 text-sm flex flex-wrap gap-x-2 gap-y-1">
+                    <span class="flex items-center gap-1">📍 Irvine, California</span>
+                    <span>•</span>
+                    <span>Senior EM</span>
+                </p>
+                <!-- SVG Icon Anchors -->
+                <div class="flex items-center gap-4 pt-2">
+                    <a href="https://www.linkedin.com/in/guy-livne" target="_blank" class="text-slate-400 hover:text-blue-600 transition" aria-label="LinkedIn">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    </a>
+                    <a href="https://github.com/guyli" target="_blank" class="text-slate-400 hover:text-slate-900 transition" aria-label="GitHub">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.65.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                    </a>
+                    <a href="mailto:guylivne5@gmail.com" class="text-slate-400 hover:text-red-500 transition" aria-label="Email">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Clean Background Isolated Headshot Placement -->
+            <div class="relative flex-shrink-0 mx-auto md:mx-0">
+                <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-400 blur-sm opacity-20"></div>
+                <img src="profile.JPEG" alt="Guy Livne Headshot" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white shadow-md">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Dynamic Container -->
+    <main class="max-w-4xl mx-auto px-6 py-4 min-h-[50vh]">
+        
+        <!-- VIEW 1: PORTFOLIO MAIN PAGE -->
+        <div id="view-portfolio" class="space-y-16">
+            <!-- Summary -->
+            <section class="space-y-3">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Executive Summary</h2>
+                <p class="text-lg text-slate-600 leading-relaxed font-light">
+                    I am an engineering leader who thrives at the intersection of product strategy, customer experience, and high scale web architecture. My career has focused on helping enterprise ecosystems transform rigid legacy systems into flexible, cloud native platforms that drive measurable financial returns and elevate digital user experiences.
+                </p>
+            </section>
+
+            <!-- Personal Section -->
+            <section class="space-y-3">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Beyond the Code</h2>
+                <p class="text-base text-slate-600 leading-relaxed font-light">
+                    When I am not orchestrating cloud architectures or micro frontends, you can usually find me running, hiking, traveling, or scuba diving. I also dedicate time to volunteering as a tutor for at-risk youth aged 10 to 17, helping them conquer Math, English, and History while systematically bridging educational gaps. On the home front, my partner and I are proud parents of two: an energetic infant and his older, much hairier sister, Golda, our six year old Golden Retriever who comfortably rules the household.
+                </p>
+            </section>
+
+            <!-- Technical Capabilities Matrix -->
+            <section class="space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Technical Expertise</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-5 rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <h3 class="font-semibold text-slate-900 mb-3 text-sm">Frontend Architecture</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">React</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">TypeScript</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">Next.js</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">Micro Frontends</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">Redux</span>
+                        </div>
+                    </div>
+                    <div class="p-5 rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <h3 class="font-semibold text-slate-900 mb-3 text-sm">Backend & Distributed Systems</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">Node.js</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">.NET (C#)</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">GraphQL</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">AWS / Azure</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">Kubernetes</span>
+                        </div>
+                    </div>
+                    <div class="p-5 rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <h3 class="font-semibold text-slate-900 mb-3 text-sm">Leadership & Strategy</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">Agile Execution</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">GenAI Strategy</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">CI/CD Governance</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-700 rounded font-medium">Team Scale</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Timeline -->
+            <section class="space-y-6">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Featured System Transformations</h2>
+                <div class="space-y-6">
+                    <div class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-base font-bold text-slate-900">AI Chat Assistant For Engagement Platforms</h3>
+                            <span class="text-xs font-medium text-slate-400">PwC</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Architected and deployed a production ready AI Chat Assistant frontend integrated directly with Databricks and structured enterprise datasets using Azure OpenAI. Enabled automated complex task pipelines for over 100K clients safely.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 text-xs bg-slate-50 text-slate-500 border border-slate-200 rounded">React</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-50 text-slate-500 border border-slate-200 rounded">Azure OpenAI</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-50 text-slate-500 border border-slate-200 rounded">.NET (C#)</span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-base font-bold text-slate-900">Next.js Platform Migration & Self Service Experience</h3>
+                            <span class="text-xs font-medium text-slate-400">Hagerty</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Directed customer facing experience architectures, decoupling legacy monostages into a secure Next.js Backend for Frontend (BFF) layout deployed across decentralized AWS Lambda layers. Heightened customer digital interaction footprints by 27 percent.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 text-xs bg-slate-50 text-slate-500 border border-slate-200 rounded">Next.js</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-50 text-slate-500 border border-slate-200 rounded">BFF Pattern</span>
+                            <span class="px-2 py-0.5 text-xs bg-slate-50 text-slate-500 border border-slate-200 rounded">AWS Lambda</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- VIEW 2: INSIGHTS TECH BLOG -->
+        <div id="view-blog" class="hidden space-y-12">
+            <section class="space-y-2">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Engineering Insights</h2>
+                <p class="text-sm text-slate-500">Deep dives into UI architecture, scaling cross functional teams, and tech platform transformations.</p>
+            </section>
+
+            <!-- Blog Posts List Links -->
+            <div id="blog-list" class="space-y-8">
+                <!-- Post 1 Link -->
+                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-1')">
+                    <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Architecture</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">How We Increased Digital Engagement by 27 Percent Using a Next.js BFF Architecture</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">Exploring how splitting a monolithic frontend into independent Next.js architectures using the Backend for Frontend design pattern streamlines multi team deliveries and bypasses complex network hurdles securely.</p>
+                    <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
+                        <span>2 min read</span>
+                    </div>
+                </article>
+
+                <!-- Post 2 Link -->
+                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-2')">
+                    <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Enterprise AI</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">Practical Guardrails for Integrating GenAI Platforms in Safe Multi Tenant Environments</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">How engineering leaders can balance rapid feature execution with strict security governance, using managed identities, role based access controls, and dynamic context windows when surfacing financial sets via LLMs.</p>
+                    <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
+                        <span>2 min read</span>
+                    </div>
+                </article>
+
+                <!-- Post 3 Link -->
+                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-3')">
+                    <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">De monolithization</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">Deconstructing the Monolith: Shifting High Volume Core Engines to Event Driven Microservices</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">A strategic blueprint on executing seamless phased infrastructure cutovers from on-prem engines into scalable event driven frameworks without incurring regressions.</p>
+                    <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
+                        <span>2 min read</span>
+                    </div>
+                </article>
+
+                <!-- Post 4 Link -->
+                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-4')">
+                    <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Engineering Culture</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">Scaling Output Without Scaling Headcount: The Component Library Strategy</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">Bypassing pipeline bottlenecks by scaling a community driven shared framework mechanism that effectively decouples deployment dependencies across cross functional units.</p>
+                    <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
+                        <span>2 min read</span>
+                    </div>
+                </article>
+
+                <!-- Post 5 Link -->
+                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-5')">
+                    <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Product Engineering</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">Bridging Technical Architecture Decisions with Direct Business Value Outcomes</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">A frameworks guide for technical platform leaders to translate system hygiene, automation models, and refactoring exercises cleanly into ROI markers stakeholders love.</p>
+                    <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
+                        <span>2 min read</span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- DYNAMIC ARTICLE LEAF WRAPPERS -->
+            <div id="article-view" class="hidden space-y-6">
+                <button onclick="closeArticle()" class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:underline mb-4">
+                    Back to all insights
+                </button>
+                
+                <!-- Full Content Article 1 -->
+                <div id="post-1" class="hidden space-y-6 prose max-w-none text-slate-600 leading-relaxed font-light text-sm md:text-base">
+                    <h1 class="text-3xl font-bold text-slate-900">How We Increased Digital Engagement by 27 Percent Using a Next.js BFF Architecture</h1>
+                    <p class="text-slate-500 text-sm">Published July 2026 By Guy Livne</p>
+                    <hr class="border-slate-200">
+                    
+                    <p>In high scale enterprise web applications, cross functional engineering squads frequently run into significant bottlenecks when dealing with shared frontend layers. Monolithic client apps often force independent product units such as payments, account settings, and discovery teams to constantly reconcile their updates within a single deployable asset. This architectural pattern inevitably increases code collision rates, results in prolonged integration loops, and places an immense amount of pressure on standard QA test suites right before a production cutover.</p>
+                    
+                    <p>To eliminate these multi team operational frictions, modern digital systems must move toward specialized patterns like the Backend for Frontend design framework. In my experience, consolidating various customer platform dashboards under a unified legacy application footprint limits delivery velocity. The strategic choice to break away a single congested surface area into distinct, tightly bounded domains creates an operational blueprint for simultaneous, multi track feature orchestration.</p>
+
+                    <!-- GRAPH 1A: LINE PLOT -->
+                    <div class="my-8 p-6 bg-slate-900 text-slate-200 rounded-xl font-mono text-xs shadow-inner">
+                        <div class="text-center font-bold text-blue-400 mb-4 uppercase tracking-wider">Line Plot: Digital Engagement Trends Post BFF Edge Migration</div>
+                        <div class="space-y-2">
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 1 Base</span> <span class="text-blue-500 font-bold">o</span><span class="text-slate-800">======================================</span> <span class="text-slate-400">100 Percent Baseline</span></div>
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 2 Beta</span> <span class="text-slate-700">========</span><span class="text-blue-400 font-bold">o</span><span class="text-slate-800">==============================</span> <span class="text-slate-400">108 Percent Proxy Verified</span></div>
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 3 Live</span> <span class="text-slate-700">==================</span><span class="text-cyan-400 font-bold">o</span><span class="text-slate-800">====================</span> <span class="text-slate-400">119 Percent Edge Router</span></div>
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 4 Peak</span> <span class="text-slate-700">============================</span><span class="text-emerald-400 font-bold">o</span><span class="text-slate-800">==========</span> <span class="text-slate-300">127 Percent Optimization</span></div>
+                        </div>
+                    </div>
+
+                    <p>A highly successful strategy involves deploying a serverless, hybrid application structure running Next.js. The runtime split is best structured into two main layers: a Client Side Single Page Application layer and a server side API proxy execution engine using Express or Node.js. To maximize initial page response and delivery efficiency, the client facing compilation layer should be deployed to Lambda Edge or Cloudflare Workers. This guarantees that core layout wrappers are evaluated directly at the global content delivery network edge close to the customer, minimizing layout shifts and optimizing core web vitals like Largest Contentful Paint.</p>
+
+                    <!-- GRAPH 1B: BAR CHART -->
+                    <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                        <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span> Bar Chart: Network Response Latency Reductions in Milliseconds
+                        </div>
+                        <div class="space-y-3 font-mono text-xs">
+                            <div>
+                                <div class="flex justify-between text-slate-600 mb-1"><span>Legacy Monolith Client SSR Latency</span> <span class="text-red-500">420ms</span></div>
+                                <div class="w-full bg-slate-100 h-3 rounded"><div class="bg-red-400 h-3 rounded" style="width: 85%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-slate-600 mb-1"><span>Decoupled Next.js Edge Cache Runtime</span> <span class="text-emerald-600">85ms</span></div>
+                                <div class="w-full bg-slate-100 h-3 rounded"><div class="bg-emerald-500 h-3 rounded" style="width: 20%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>Backend for Frontend controller microservices should be purposely isolated inside internal virtual private cloud private subnets. This deliberate infrastructure design shielding downstream services which access transaction engines, configuration databases, and member systems ensures security against direct public routing rules. The edge compute layers can then communicate seamlessly with the internal VPC layers using highly secure, optimized proxy handshakes.</p>
+
+                    <h3 class="text-lg font-bold text-slate-900 mt-4">Optimizing Runtime Utilities and Core Outcomes</h3>
+                    <p>Moving complex overhead operations out of the client browser and into the dedicated server BFF layer provides dramatic structural benefits. Responsibilities such as handling authorization handshakes with OpenID Connect, parsing JSON Web Tokens, managing secure cookies, and making API requests to upstream endpoints are centralized entirely on the backend server. Additionally, utilizing middleware utilities to evaluate feature toggles via split testing platforms like LaunchDarkly on the fly ensures tailored layout structures before delivering elements down to the client container.</p>
+                    
+                    <p>By standardizing on automated integration setups utilizing modern testing frameworks like Cypress, Playwright, and Jest alongside unified mock data structures, teams can remove testing bottlenecks completely. This unified architecture allows software groups to build and ship end to end features concurrently over tight agile development sprints. The resulting experience delivers a highly performant, scalable user profile surface area that accelerates digital customer engagement.</p>
+                </div>
+
+                <!-- Full Content Article 2 -->
+                <div id="post-2" class="hidden space-y-6 prose max-w-none text-slate-600 leading-relaxed font-light text-sm md:text-base">
+                    <h1 class="text-3xl font-bold text-slate-900">Practical Guardrails for Integrating GenAI Platforms in Safe Multi Tenant Environments</h1>
+                    <p class="text-slate-500 text-sm">Published June 2026 By Guy Livne</p>
+                    <hr class="border-slate-200">
+
+                    <p>The operational drive across enterprise organizations to adopt large language models and cognitive search platforms has placed significant emphasis on technical security structures. While the customer facing appeal of interacting naturally with data is clear, introducing artificial intelligence into complex spaces like financial services requires strict security guardrails. System architects must prioritize cryptographic and runtime resource isolation above all else to ensure tenant boundaries remain uncompromised.</p>
+
+                    <p>When engineering interfaces processing high stakes transactions or protected corporate insights, standard multi tenant parameters face unique risks. Traditional access structures are built around rigid API endpoints and relational query logic. In contrast, artificial intelligence inputs rely on unstructured inputs and generative context pipelines. Without absolute perimeter boundaries, models run the risk of exposing cross tenant data footprints through prompt injection or contextual cross leakage anomalies.</p>
+
+                    <!-- GRAPH 2A: HISTOGRAM -->
+                    <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                        <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span> Histogram: Frequency Distribution of Prompt Length and Token Filtering Speeds
+                        </div>
+                        <div class="space-y-2 font-mono text-xs">
+                            <div class="flex items-center"><span class="w-24 text-slate-400">Small Tokens</span> <div class="bg-green-500 h-4 rounded ml-2" style="width: 95%"></div> <span class="ml-2 text-slate-500">95k requests</span></div>
+                            <div class="flex items-center"><span class="w-24 text-slate-400">Medium Tokens</span> <div class="bg-emerald-500 h-4 rounded ml-2" style="width: 65%"></div> <span class="ml-2 text-slate-500">65k requests</span></div>
+                            <div class="flex items-center"><span class="w-24 text-slate-400">Large Tokens</span> <div class="bg-teal-500 h-4 rounded ml-2" style="width: 30%"></div> <span class="ml-2 text-slate-500">30k requests</span></div>
+                            <div class="flex items-center"><span class="w-24 text-slate-400">Huge Tokens</span> <div class="bg-blue-500 h-4 rounded ml-2" style="width: 10%"></div> <span class="ml-2 text-slate-500">10k requests</span></div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-bold text-slate-900 mt-4">Constructing a Stateless Retrieval Layer</h3>
+                    <p>To deliver an intelligent conversational interface tailored for enterprise platforms, the design should emphasize a strict zero state model architecture. The user interface must not speak directly to the artificial intelligence core, nor should the AI layer retain permanent knowledge of individual client records. Instead, teams should develop a secure multi tenant bridge infrastructure using role based access control guidelines and OpenID Connect tokens via services like Microsoft Entra ID.</p>
+
+                    <!-- GRAPH 2B: PIE PLOT -->
+                    <div class="my-8 p-6 bg-slate-900 text-slate-300 rounded-xl font-mono text-xs">
+                        <div class="text-center font-bold text-green-400 mb-4 uppercase tracking-wider">Pie Chart Representation: Isolated Context Payload Distribution</div>
+                        <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
+                            <div class="p-2 bg-slate-800 rounded border border-slate-700">
+                                <div class="text-green-400 text-base font-bold">70 Percent</div>
+                                <div class="text-slate-400 mt-1">Tenant Permitted Core Logs</div>
+                            </div>
+                            <div class="p-2 bg-slate-800 rounded border border-slate-700">
+                                <div class="text-blue-400 text-base font-bold">20 Percent</div>
+                                <div class="text-slate-400 mt-1">Dynamic Prompt Templates</div>
+                            </div>
+                            <div class="p-2 bg-slate-800 rounded border border-slate-700">
+                                <div class="text-yellow-400 text-base font-bold">10 Percent</div>
+                                <div class="text-slate-400 mt-1">Metadata System Tags</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>When a professional submits an open ended conversational request, the API layer intercepts the payload. The gateway extracts the user cryptographically signed permissions and uses them to dynamically query isolated data backends like Databricks or structured relational databases. The raw corporate data is retrieved first via traditional indexed channels, and only the specific, permitted subset of records is attached to the short lived model context window. This approach ensures that the large language model functions purely as an analytical execution engine rather than a permanent storage bucket.</p>
+
+                    <h3 class="text-lg font-bold text-slate-900 mt-4">Enterprise Security Controls and Real Time Telemetry</h3>
+                    <p>To guarantee complete platform governance, solutions should be deployed using managed identity components inside enterprise cloud structures like Azure OpenAI and Kubernetes clusters. All API traffic must pass through validation checkpoints that filter for malicious prompt structures or systemic boundary violations before the request ever hits the model backend. Tools like LangChain, Pinecone vector databases, and LlamaIndex help structure these flows efficiently.</p>
+                    
+                    <p>Furthermore, integrating automated auditing mechanisms using distributed log analytics tools like ELK Stack or Splunk is vital. Every step of the pipeline from initial domain routing cookies to the final outbound text evaluation is recorded securely inside persistent audit tables. Implementing real time telemetry ensures that any contextual anomaly or validation variance automatically drops the user active session, providing verifiable data privacy compliance across complex, high scale corporate environments.</p>
+                </div>
+
+                <!-- Full Content Article 3 -->
+                <div id="post-3" class="hidden space-y-6 prose max-w-none text-slate-600 leading-relaxed font-light text-sm md:text-base">
+                    <h1 class="text-3xl font-bold text-slate-900">Deconstructing the Monolith: Shifting High Volume Core Engines to Event Driven Microservices</h1>
+                    <p class="text-slate-500 text-sm">Published May 2026 By Guy Livne</p>
+                    <hr class="border-slate-200">
+
+                    <p>Migrating business critical, high volume platforms away from rigid legacy monolithic infrastructures toward elastic cloud environments represents one of the most complex challenges in software engineering. When a core system serves millions of active daily transactions such as high scale pricing frameworks or transaction management platforms, introducing execution errors can result in immediate loss of user trust and significant revenue impacts. Therefore, big bang deployments are an unacceptable business risk.</p>
+
+                    <p>True success during major software overhaul initiatives requires systematic decoupling across both the presentation layer and the underlying backend data services. Encountering a legacy core engine built on a monolithic server side rendering setup means that as the feature footprint scales, adding new optimization elements becomes highly challenging. This is due to the fact that a change in one domain often generates unexpected bugs in entirely unrelated modules.</p>
+
+                    <!-- GRAPH 3A: HISTOGRAM -->
+                    <div class="my-8 p-6 bg-slate-900 text-slate-300 rounded-xl font-mono text-xs">
+                        <div class="text-center font-bold text-green-400 mb-4 uppercase tracking-wider">Histogram: Phased Migration Target Crossover Volumetric Loading</div>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between text-[10px] mb-1 text-slate-400"><span>Phase 1 Ingestion Pipelines</span> <span>100 Percent Traffic</span></div>
+                                <div class="w-full bg-slate-800 h-3 rounded"><div class="bg-emerald-500 h-3 rounded" style="width: 100%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-[10px] mb-1 text-slate-400"><span>Phase 2 Base Pricing Simulation</span> <span>75 Percent Traffic</span></div>
+                                <div class="w-full bg-slate-800 h-3 rounded"><div class="bg-teal-500 h-3 rounded" style="width: 75%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-[10px] mb-1 text-slate-400"><span>Phase 3 Real Time Approvals Ledger</span> <span>25 Percent Traffic</span></div>
+                                <div class="w-full bg-slate-800 h-3 rounded"><div class="bg-blue-500 h-3 rounded" style="width: 25%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-bold text-slate-900 mt-4">The Blue Green Cutover Blueprint</h3>
+                    <p>To mitigate execution risk, I advocate designing a multi phase structural migration path centered around a continuous rewrite model. Engineering teams should start by mapping out clear domain boundaries for every core capability, identifying individual units such as calculation routines, competitor ingestion nodes, and user approval paths. Before writing any new code, introducing an abstraction proxy layer using the legacy monolith itself as an intelligent gateway router is highly effective.</p>
+
+                    <!-- GRAPH 3B: LINE CHART -->
+                    <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                        <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-teal-500"></span> Line Plot: Compute Stability Variance Under System Load Scaling
+                        </div>
+                        <div class="space-y-2 font-mono text-xs text-slate-600">
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Monolith Load</span> <span class="text-red-500 font-bold">o</span><span class="text-slate-200">==================</span> <span class="text-red-500 font-bold">Outage Peak</span></div>
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Microservice Load</span> <span class="text-slate-200">==================</span><span class="text-emerald-500 font-bold">o</span> <span class="text-emerald-600 font-bold">Fluid Stable</span></div>
+                        </div>
+                    </div>
+                    
+                    <p>This design allows teams to rewrite specific backend subsystems incrementally into isolated microservices running on technologies like Spring Boot, Node.js, and Apache Kafka for event streaming. As a new service is built and validated in cloud environments, the proxy router is updated to forward specific traffic blocks to the newly optimized endpoints. If an unhandled exception occurs, the router can instantly drop back to the legacy code path within milliseconds. For incomplete elements, users are seamlessly routed to legacy pages, ensuring a continuous cutover process with zero client facing downtime.</p>
+
+                    <h3 class="text-lg font-bold text-slate-900 mt-4">Decoupling Client Interfaces via Micro Frontends</h3>
+                    <p>Simultaneously, the presentation layer should break down into a micro frontend architecture built on decoupled Single Page Applications. By moving away from legacy server side rendering toward a client side architecture using state management frameworks like Redux Toolkit or Zustand alongside Webpack Module Federation, frontend codebases mirror the clean boundaries of cloud services.</p>
+                    
+                    <p>This allows independent engineering tracks to deploy updates to localized systems such as promotional features or pricing tables without needing a full release of the entire enterprise architecture. This isolated setup minimizes the deployment blast radius and optimizes system reliability, allowing platform operations to safely scale from initial MVPs into scalable architectures managing high transaction volumes.</p>
+                </div>
+
+                <!-- Full Content Article 4 -->
+                <div id="post-4" class="hidden space-y-6 prose max-w-none text-slate-600 leading-relaxed font-light text-sm md:text-base">
+                    <h1 class="text-3xl font-bold text-slate-900">Scaling Output Without Scaling Headcount: The Component Library Strategy</h1>
+                    <p class="text-slate-500 text-sm">Published April 2026 By Guy Livne</p>
+                    <hr class="border-slate-200">
+
+                    <p>In high growth engineering environments, delivery backlogs frequently outpace your available development team capacity. The classic corporate instinct is to aggressively scale engineering headcount. However, adding more engineers to a complex, tightly coupled software structure often delays output further due to increased communication overhead, training ramp ups, and branching complexity.</p>
+
+                    <p>To unlock exponential team velocity without relying on linear hiring expansion, engineering leaders must optimize code reuse patterns. When multiple development squads are tasked with building independent product paths, they often waste significant time building identical structural layouts, forms, buttons, and validation engines from scratch. Centralizing these core elements within an internally managed framework asset fundamentally alters your delivery capabilities.</p>
+
+                    <!-- GRAPH 4A: BAR CHART -->
+                    <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                        <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-purple-500"></span> Bar Chart: Time Investment Savings Breakdown Per Feature Lifecycle
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 font-mono text-xs">
+                            <div class="p-3 bg-slate-50 rounded">
+                                <div class="text-slate-500">Without Common Core Code</div>
+                                <div class="text-xl font-bold text-red-500 mt-1">18 Days Avg</div>
+                            </div>
+                            <div class="p-3 bg-indigo-50/50 rounded">
+                                <div class="text-indigo-600 font-bold">With Shared Module Framework</div>
+                                <div class="text-xl font-bold text-emerald-600 mt-1">4 Days Avg</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-bold text-slate-900 mt-4">Engineering an Internal Open Source System</h3>
+                    <p>During major digital storefront migrations, initiating an internal project to build a highly optimized, shared UI component ecosystem yields immediate results. To ensure deep adoption across all engineering tracks, leaders should avoid a top down mandate. Instead, establishing a community driven model where senior developers from different product tracks actively shaped the foundation architectural rules works best.</p>
+
+                    <!-- GRAPH 4B: PIE PLOT -->
+                    <div class="my-8 p-6 bg-slate-900 text-slate-300 rounded-xl font-mono text-xs">
+                        <div class="text-center font-bold text-purple-400 mb-3 uppercase tracking-wider">Pie Chart Representation: Sprint Allocation Metrics Comparison</div>
+                        <div class="grid grid-cols-2 gap-4 text-center text-[11px]">
+                            <div class="p-3 bg-slate-800 rounded border border-slate-700">
+                                <div class="text-slate-400 font-bold mb-1">Pre Library System Split</div>
+                                <div class="text-red-400">45 Percent Layouts</div>
+                                <div class="text-slate-500">55 Percent Logic</div>
+                            </div>
+                            <div class="p-3 bg-slate-800 rounded border border-slate-700">
+                                <div class="text-emerald-400 font-bold mb-1">Post Library System Split</div>
+                                <div class="text-emerald-400">10 Percent Layouts</div>
+                                <div class="text-blue-400">90 Percent Pure Logic</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>Building shared design components using clean TypeScript configuration schemas, Storybook for isolation, Tailwind CSS for utilities, and npm or Artifactory for package distribution ensures a professional workflow. The code should be treated exactly like a major public open source project. Setting up rigid linting workflows with ESLint, clear versioning with Semantic Release, and automated layout regression testing via Chromatic inside continuous integration pipelines provides deep stability.</p>
+
+                    <h3 class="text-lg font-bold text-slate-900 mt-4">Decoupling Timelines and Streamlining Delivery</h3>
+                    <p>The operational return on this framework investment is immediate and compounding. By importing the centralized library into modular single page applications, product squads no longer spend time writing boilerplate UI code. Instead, developers focus database and interface connections on localized business logic, backend integrations, and data validation rules.</p>
+                    
+                    <p>When product partners require widespread design changes such as updating promotional layouts or global navigation displays, modifying the code once inside the master library handles the shift. Publishing an updated package instantly pushes the enhancement out across decentralized systems, eliminating cross team friction and drastically reducing time to market execution metrics.</p>
+                </div>
+
+                <!-- Full Content Article 5 -->
+                <div id="post-5" class="hidden space-y-6 prose max-w-none text-slate-600 leading-relaxed font-light text-sm md:text-base">
+                    <h1 class="text-3xl font-bold text-slate-900">Bridging Technical Architecture Decisions with Direct Business Value Outcomes</h1>
+                    <p class="text-slate-500 text-sm">Published March 2026 By Guy Livne</p>
+                    <hr class="border-slate-200">
+
+                    <p>A frequent challenge within modern technology organizations is the alignment gap between engineering priorities and high level corporate business strategy. Non technical leadership stakeholders often view deep technical refactoring tracks, automated testing overhauls, or database modernization roadmaps purely as cost heavy delays that slow down user facing feature pipelines. Conversely, developers can view rapid feature requests as technical shortcuts that compromise long term code quality.</p>
+                    
+                    <p>The primary responsibility of an engineering leader is to bridge this alignment gap. Technology teams must move away from discussing abstract software metrics like code coverage ratios or architectural purity in isolation. Instead, every modernization effort should be communicated through its direct impact on core business outcomes: reducing operational risk, lowering infrastructure expenses, increasing conversion rates, or accelerating product feature velocity.</p>
+
+                    <!-- GRAPH 5A: LINE CHART -->
+                    <div class="my-8 p-6 bg-slate-900 text-slate-300 rounded-xl font-mono text-[11px] shadow-lg">
+                        <div class="text-center font-bold text-blue-400 mb-4 uppercase tracking-wider">Line Plot: Technical Debt Paydown Trends Across Annual Quarters</div>
+                        <div class="space-y-1.5">
+                            <div class="flex items-center"><span class="w-24 text-slate-500">Quarter 1</span> <span class="text-red-400 font-bold">o</span><span class="text-slate-700">=================================</span> <span class="text-slate-400">Velocity Low</span></div>
+                            <div class="flex items-center"><span class="w-24 text-slate-500">Quarter 2</span> <span class="text-slate-600">========</span><span class="text-yellow-400 font-bold">o</span><span class="text-slate-700">=========================</span> <span class="text-slate-400">Velocity Moderate</span></div>
+                            <div class="flex items-center"><span class="w-24 text-slate-500">Quarter 3</span> <span class="text-slate-600">==================</span><span class="text-blue-400 font-bold">o</span><span class="text-slate-700">===============</span> <span class="text-slate-400">Velocity Accelerating</span></div>
+                            <div class="flex items-center"><span class="w-24 text-slate-500">Quarter 4</span> <span class="text-slate-600">============================</span><span class="text-emerald-400 font-bold">o</span><span class="text-slate-700">====</span> <span class="text-slate-400">Velocity Maximum</span></div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-bold text-slate-900 mt-4">Translating Engineering Quality into Financial ROI</h3>
+                    <p>When planning architectural updates across major platforms, technical roadmaps must be consistently tied to core product strategy parameters. For instance, converting a monolithic code engine into cloud native microservices should not be framed as merely modernizing the stack. Instead, it should be presented as an initiative to reduce production incident rates through tools like Prometheus and Grafana, eliminate system downtime during peak loading windows, and lower cloud compute costs through dynamic auto scaling policies within Kubernetes.</p>
+
+                    <!-- GRAPH 5B: BAR CHART -->
+                    <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+                        <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Bar Chart: Bottom Line Revenue Scaling Achieved Via Refactoring
+                        </div>
+                        <div class="space-y-3 font-mono text-xs">
+                            <div>
+                                <div class="flex justify-between text-slate-600 mb-1"><span>Pricing Automation Platform Launch</span> <span class="text-emerald-600">50M Direct Growth</span></div>
+                                <div class="w-full bg-slate-100 h-2.5 rounded"><div class="bg-emerald-500 h-2.5 rounded" style="width: 85%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-slate-600 mb-1"><span>Modernized Payment Experience</span> <span class="text-blue-600">1.5M Direct Pipeline</span></div>
+                                <div class="w-full bg-slate-100 h-2.5 rounded"><div class="bg-blue-500 h-2.5 rounded" style="width: 45%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>Similarly, investing in automated deployment structures and testing guardrails directly translates to faster feature validation cycles. Moving deployment cycles from a bi weekly process to multiple independent daily releases via robust Jenkins, GitHub Actions, or GitLab CI pipelines enables product teams to respond quickly to market changes. By focusing on superior engineering hygiene, tech teams ensure that code modifications translate directly to clear customer experience milestones and sustainable revenue generation.</p>
+
+                    <h3 class="text-lg font-bold text-slate-900 mt-4">Establishing Shared OKRs for Technical Hygiene</h3>
+                    <p>To maintain this strategic alignment permanently, engineering leaders should establish unified Objectives and Key Results (OKRs) alongside product management and finance partners. Rather than separating technical debt into an isolated engineering bucket, technical hygiene tracks should be embedded within user facing feature goals.</p>
+                    
+                    <p>When an engineering unit optimizes checkout flows, builds a shared template engine, or deploys automated code validation helpers, they are driving developer efficiency and improving end user response speeds. Linking technical strategy with business value outcomes builds deep organizational trust and ensures that platform investments are recognized as key drivers of corporate competitive advantage.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-4xl mx-auto px-6 py-12 text-center text-xs text-slate-400 border-t border-slate-200 mt-16">
+        &copy; 2026 Guy Livne. Built with absolute simplicity on Vercel.
+    </footer>
+
+    <!-- Interactive Navigation Tab Router Engine script with State Syncing Logic -->
+    <script>
+        // Lifecycle Init: Read view state parameter from URL hash on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentHash = window.location.hash;
+            
+            if (currentHash.startsWith('#blog/post-')) {
+                const postId = currentHash.replace('#blog/', '');
+                switchTab('blog');
+                openArticle(postId, false); // Route directly into the insight sub view state
+            } else if (currentHash === '#blog') {
+                switchTab('blog');
+            } else {
+                switchTab('portfolio');
+            }
+        });
+
+        function switchTab(tabName) {
+            const portfolioView = document.getElementById('view-portfolio');
+            const blogView = document.getElementById('view-blog');
+            const portfolioBtn = document.getElementById('nav-portfolio');
+            const blogBtn = document.getElementById('nav-blog');
+
+            if (tabName === 'portfolio') {
+                portfolioView.classList.remove('hidden');
+                blogView.classList.add('hidden');
+                portfolioBtn.className = "text-blue-600 font-semibold transition";
+                blogBtn.className = "text-slate-500 hover:text-slate-900 transition";
+                
+                // Update Address Bar State softly without reloading
+                history.replaceState(null, null, ' ');
+            } else if (tabName === 'blog') {
+                blogView.classList.remove('hidden');
+                portfolioView.classList.add('hidden');
+                blogBtn.className = "text-blue-600 font-semibold transition";
+                portfolioBtn.className = "text-slate-500 hover:text-slate-900 transition";
+                closeArticle(false); 
+                history.replaceState(null, null, '#blog');
+            }
+        }
+
+        function openArticle(postId, shouldUpdateHash = true) {
+            document.getElementById('blog-list').classList.add('hidden');
+            document.getElementById('article-view').classList.remove('hidden');
+            
+            ['post-1', 'post-2', 'post-3', 'post-4', 'post-5'].forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            
+            document.getElementById(postId).classList.remove('hidden');
+            
+            if (shouldUpdateHash) {
+                history.replaceState(null, null, `#blog/${postId}`);
+            }
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        function closeArticle(shouldUpdateHash = true) {
+            document.getElementById('article-view').classList.add('hidden');
+            document.getElementById('blog-list').classList.remove('hidden');
+            
+            if (shouldUpdateHash) {
+                history.replaceState(null, null, '#blog');
+            }
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
