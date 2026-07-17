@@ -76,10 +76,10 @@
     <!-- Sticky Navigation Bar -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" onclick="switchTab('portfolio')" class="text-md font-bold tracking-tight text-slate-900 hover:text-blue-600 transition">GL</a>
+            <a href="#portfolio" class="text-md font-bold tracking-tight text-slate-900 hover:text-blue-600 transition">GL</a>
             <div class="flex items-center gap-6 text-sm font-medium">
-                <button id="nav-portfolio" onclick="switchTab('portfolio')" class="text-blue-600 font-semibold transition">Portfolio</button>
-                <button id="nav-blog" onclick="switchTab('blog')" class="text-slate-500 hover:text-slate-900 transition">Insights Blog</button>
+                <button id="nav-portfolio" onclick="window.location.hash = '#portfolio'" class="text-blue-600 font-semibold transition">Portfolio</button>
+                <button id="nav-blog" onclick="window.location.hash = '#blog'" class="text-slate-500 hover:text-slate-900 transition">Insights Blog</button>
                 <a href="mailto:guylivne5@gmail.com" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs hover:bg-slate-800 transition">Contact</a>
             </div>
         </div>
@@ -114,7 +114,10 @@
             <!-- Clean Background Isolated Headshot Placement -->
             <div class="relative flex-shrink-0 mx-auto md:mx-0">
                 <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-400 blur-sm opacity-20"></div>
-                <img src="profile.JPEG" alt="Guy Livne Headshot" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white shadow-md">
+                <img src="profile.JPEG" 
+                    alt="Guy Livne Senior Engineering Manager - Enterprise Platforms and AI Governance Expert Headshot" 
+                    title="Guy Livne - Product Engineering Leader"
+                    class="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white shadow-md">
             </div>
         </div>
     </header>
@@ -126,7 +129,7 @@
         <div id="view-portfolio" class="space-y-16">
             <!-- Summary -->
             <section class="space-y-3">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">Executive Summary</h2>
+                <h2 class="text-base font-bold tracking-widest text-blue-600">Hi 👋, I'm Guy</h2>
                 <p class="text-lg text-slate-600 leading-relaxed font-light">
                     I am an engineering leader who thrives at the intersection of product strategy, customer experience, and high scale web architecture. My career has focused on helping enterprise ecosystems transform rigid legacy systems into flexible, cloud native platforms that drive measurable financial returns and elevate digital user experiences.
                 </p>
@@ -238,64 +241,75 @@
             <!-- Blog Posts List Links -->
             <div id="blog-list" class="space-y-8">
                 <!-- Post 6 Link -->
-                 <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-6')">
+                 <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="window.location.hash = '#blog/post-6'">
                     <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">#06 AI Governance</span>
                     <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">Architecting Deterministic Control Planes for Autonomous Agents in High Security Environments</h3>
                     <p class="text-slate-600 text-sm mt-2 line-clamp-2">How engineering leaders can enforce absolute policy boundaries, audit loops, and hard runtime guardrails over generative AI agents without sacrificing execution velocity.</p>
                     <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
-                        <span>2 min read</span>
+                        <span>3 min read</span>
+                        <span>•</span>
+                        <span class="text-blue-500 hover:underline">Read AI Governance Publication</span>
                     </div>
                 </article>
 
                 <!-- Post 5 Link -->
-                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-5')">
+                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="window.location.hash = '#blog/post-5'">
                     <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">#05 Architecture</span>
                     <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">How We Increased Digital Engagement by 27 Percent Using a Next.js BFF Architecture</h3>
                     <p class="text-slate-600 text-sm mt-2 line-clamp-2">Exploring how splitting a monolithic frontend into independent Next.js architectures using the Backend for Frontend design pattern streamlines multi team deliveries and bypasses complex network hurdles securely.</p>
                     <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
-                        <span>2 min read</span>
+                        <span>3 min read</span>
+                        <span>•</span>
+                        <span class="text-blue-500 hover:underline">Read Frontend Architecture Guide</span>
                     </div>
                 </article>
 
                 <!-- Post 4 Link -->
-                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-4')">
+                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="window.location.hash = '#blog/post-4'">
                     <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">#04 Enterprise AI</span>
                     <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">Practical Guardrails for Integrating GenAI Platforms in Safe Multi Tenant Environments</h3>
                     <p class="text-slate-600 text-sm mt-2 line-clamp-2">How engineering leaders can balance rapid feature execution with strict security governance, using managed identities, role based access controls, and dynamic context windows when surfacing financial sets via LLMs.</p>
                     <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
-                        <span>2 min read</span>
+                        <span>3 min read</span>
+                        <span>•</span>
+                        <span class="text-blue-500 hover:underline">Read Enterprise AI Security Blueprint</span>
                     </div>
                 </article>
 
                 <!-- Post 3 Link -->
-                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-3')">
+                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="window.location.hash = '#blog/post-3'">
                     <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">#03 De monolithization</span>
                     <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">Deconstructing the Monolith: Shifting High Volume Core Engines to Event Driven Microservices</h3>
                     <p class="text-slate-600 text-sm mt-2 line-clamp-2">A strategic blueprint on executing seamless phased infrastructure cutovers from on-prem engines into scalable event driven frameworks without incurring regressions.</p>
                     <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
-                        <span>2 min read</span>
+                        <span>3 min read</span>
+                        <span>•</span>
+                        <span class="text-blue-500 hover:underline">Read Distributed Systems Migration Strategy</span>
                     </div>
                 </article>
 
                 <!-- Post 2 Link -->
-                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-2')">
+                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="window.location.hash = '#blog/post-2'">
                     <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">#02 Engineering Culture</span>
                     <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">Scaling Output Without Scaling Headcount: The Component Library Strategy</h3>
                     <p class="text-slate-600 text-sm mt-2 line-clamp-2">Bypassing pipeline bottlenecks by scaling a community driven shared framework mechanism that effectively decouples deployment dependencies across cross functional units.</p>
                     <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
-                        <span>2 min read</span>
+                        <span>3 min read</span>
+                        <span>•</span>
+                        <span class="text-blue-500 hover:underline">Read Developer Velocity Scale Metrics</span>
                     </div>
                 </article>
 
                 <!-- Post 1 Link -->
-                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="openArticle('post-1')">
+                <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="window.location.hash = '#blog/post-1'">
                     <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">#01 Product Engineering</span>
                     <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">Bridging Technical Architecture Decisions with Direct Business Value Outcomes</h3>
                     <p class="text-slate-600 text-sm mt-2 line-clamp-2">A frameworks guide for technical platform leaders to translate system hygiene, automation models, and refactoring exercises cleanly into ROI markers stakeholders love.</p>
                     <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
-                        <span>2 min read</span>
+                        <span>3 min read</span>
+                        <span>•</span>
+                        <span class="text-blue-500 hover:underline">Read Product Strategy Engineering Guide</span>
                     </div>
-                </article>
             </div>
 
             <!-- DYNAMIC ARTICLE LEAF WRAPPERS -->
@@ -693,117 +707,106 @@
 
     <!-- Interactive Navigation Tab Router Engine script with State Syncing Logic -->
     <script>
-        // Lifecycle Init: Read view state parameter from URL hash on load
-        window.addEventListener('DOMContentLoaded', () => {
-            const currentHash = window.location.hash;
-            
-            if (currentHash.startsWith('#blog/post-')) {
-                const postId = currentHash.replace('#blog/', '');
-                switchTab('blog');
-                openArticle(postId, false); // Route directly into the insight sub view state
-            } else if (currentHash === '#blog') {
-                switchTab('blog');
-            } else {
-                switchTab('portfolio');
+        // Centralized State-Driven Router Engine
+        function handleRouting() {
+            // Reset to default home page branding indicators
+            document.title = "Guy Livne | Enterprise Platforms & AI Governance Leader";
+            let defaultDesc = document.querySelector('meta[name="description"]');
+            if (defaultDesc) {
+                defaultDesc.setAttribute('content', "Professional profile of Guy Livne. Engineering leader specializing in enterprise platforms, AI governance control planes, zero-trust security engineering, and cloud-native microservices.");
             }
-        });
 
-        // Listen for browser Back/Forward navigation clicks
-        window.addEventListener('popstate', (event) => {
-            if (event.state && event.state.postId) {
-                openArticle(event.state.postId);
-            } else {
-                // Fallback to main list view
-                closeArticle(true);
-            }
-        });
+            const hash = window.location.hash || '#portfolio';
 
-        // Handle deep links when someone opens "guylivne.com/#blog/post-6" directly
-        window.addEventListener('load', () => {
-            const hash = window.location.hash;
-            if (hash && hash.startsWith('#blog/')) {
-                const postId = hash.replace('#blog/', '');
-                openArticle(postId);
-            }
-        });
-
-        function switchTab(tabName) {
             const portfolioView = document.getElementById('view-portfolio');
             const blogView = document.getElementById('view-blog');
+            const blogList = document.getElementById('blog-list');
+            const articleView = document.getElementById('article-view');
             const portfolioBtn = document.getElementById('nav-portfolio');
             const blogBtn = document.getElementById('nav-blog');
 
-            if (tabName === 'portfolio') {
+            // Reset navigation button states
+            [portfolioBtn, blogBtn].forEach(btn => {
+                if (btn) {
+                    btn.className = "text-slate-500 hover:text-slate-900 transition";
+                }
+            });
+
+            // Route 1: Main Portfolio Page
+            if (hash === '#portfolio' || hash === '') {
                 portfolioView.classList.remove('hidden');
                 blogView.classList.add('hidden');
-                portfolioBtn.className = "text-blue-600 font-semibold transition";
-                blogBtn.className = "text-slate-500 hover:text-slate-900 transition";
-                
-                // Update Address Bar State softly without reloading
-                history.replaceState(null, null, ' ');
-            } else if (tabName === 'blog') {
-                blogView.classList.remove('hidden');
+                if (portfolioBtn) portfolioBtn.className = "text-blue-600 font-semibold transition";
+            } 
+            
+            // Route 2: Insights Directory
+            else if (hash === '#blog') {
                 portfolioView.classList.add('hidden');
-                blogBtn.className = "text-blue-600 font-semibold transition";
-                portfolioBtn.className = "text-slate-500 hover:text-slate-900 transition";
-                closeArticle(false); 
-                history.replaceState(null, null, '#blog');
-            }
-        }
+                blogView.classList.remove('hidden');
+                blogList.classList.remove('hidden');
+                articleView.classList.add('hidden');
+                if (blogBtn) blogBtn.className = "text-blue-600 font-semibold transition";
+            } 
+            
+            // Route 3: Opened Insight Article Detail View
+            else if (hash.startsWith('#blog/post-')) {
+                const postId = hash.replace('#blog/', '');
 
-        function openArticle(postId) {
-            // 1. Show the article viewer, hide the list
-            document.getElementById('blog-list').classList.add('hidden');
-            document.getElementById('article-view').classList.remove('hidden');
-            
-            // 2. Hide all posts, then reveal the target post
-            const posts = [
-                'post-6',
-                'post-5',
-                'post-4',
-                'post-3',
-                'post-2',
-                'post-1'
-            ];
-            posts.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.classList.add('hidden');
-            });
-            
-            const targetPost = document.getElementById(postId);
-            if (targetPost) {
-                targetPost.classList.remove('hidden');
-                
-                // 3. READ METADATA AND WRITE TO THE TARGET WRAPPER (This replaces, never appends)
-                const num = targetPost.getAttribute('data-number') || '';
-                const cat = targetPost.getAttribute('data-category') || '';
-                
-                const targetWrapper = document.getElementById('article-category-target');
-                if (targetWrapper) {
-                    targetWrapper.textContent = `${num} ${cat}`;
+                portfolioView.classList.add('hidden');
+                blogView.classList.remove('hidden');
+                blogList.classList.add('hidden');
+                articleView.classList.remove('hidden');
+                if (blogBtn) blogBtn.className = "text-blue-600 font-semibold transition";
+
+                // Hide all posts out of view, then display target post
+                const posts = ['post-1', 'post-2', 'post-3', 'post-4', 'post-5', 'post-6'];
+                posts.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.classList.add('hidden');
+                });
+
+                const targetPost = document.getElementById(postId);
+                if (targetPost) {
+                    targetPost.classList.remove('hidden');
+
+                    // Set category headers safely
+                    const num = targetPost.getAttribute('data-number') || '';
+                    const cat = targetPost.getAttribute('data-category') || '';
+                    const targetWrapper = document.getElementById('article-category-target');
+                    if (targetWrapper) {
+                        targetWrapper.textContent = `${num} ${cat}`;
+                    }
                 }
-            }
 
-            // 4. Update the comment pipeline and router hash
-            loadGiscusComments(postId);
+                // DYNAMIC SEO TAG INJECTION MECHANISM
+                const articleTitle = targetPost.querySelector('h1')?.textContent;
+                const articleExcerpt = targetPost.querySelector('p')?.textContent;
+                
+                if (articleTitle) {
+                    // Update browser tab window title dynamically for crawlers
+                    document.title = `${articleTitle} | Guy Livne Insights`;
+                    
+                    // Update or patch header meta descriptions dynamically
+                    let metaDesc = document.querySelector('meta[name="description"]');
+                    if (metaDesc) {
+                        metaDesc.setAttribute('content', articleExcerpt || `Technical publication by Guy Livne: ${articleTitle}`);
+                    }
+                }
 
-            if (window.location.hash !== `#blog/${postId}`) {
-                history.pushState({ postId: postId }, '', `#blog/${postId}`);
+                // Load dynamic comment stream for this specific post
+                loadGiscusComments(postId);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Close the article and go back to the list
-        function closeArticle(isPopState = false) {
-            document.getElementById('article-view').classList.add('hidden');
-            document.getElementById('blog-list').classList.remove('hidden');
-
-            // Only modify the history state if we didn't get here via a native back button click
-            if (!isPopState) {
-                history.pushState({ postId: null }, '', '#');
-            }
+        // Return to article directory state
+        function closeArticle() {
+            window.location.hash = '#blog';
         }
+
+        // Listen for standard browser URL changes
+        window.addEventListener('hashchange', handleRouting);
+        window.addEventListener('load', handleRouting);
 
         function loadGiscusComments(postId) {
             const container = document.getElementById('giscus-container');
@@ -841,11 +844,36 @@
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
                     .then((registration) => {
-                        console.log('PWA Service Worker registered successfully with scope:', registration.scope);
+                        console.log('PWA Service Worker registered successfully');
+
+                        // Listen for updates to the service worker
+                        registration.onupdatefound = () => {
+                            const installingWorker = registration.installing;
+                            if (installingWorker == null) return;
+
+                            installingWorker.onstatechange = () => {
+                                if (installingWorker.state === 'installed') {
+                                    if (navigator.serviceWorker.controller) {
+                                        // A new service worker is available; notify and reload automatically
+                                        console.log('New content is available; reloading page...');
+                                        window.location.reload();
+                                    }
+                                }
+                            };
+                        };
                     })
                     .catch((error) => {
-                        console.error('PWA Service Worker registration process encountered a failure:', error);
+                        console.error('PWA Service Worker registration failed:', error);
                     });
+            });
+
+            // Handle controller changes (e.g. self.clients.claim() on activate)
+            let refreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                if (!refreshing) {
+                    refreshing = true;
+                    window.location.reload();
+                }
             });
         }
     </script>
