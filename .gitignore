@@ -4,3 +4,4 @@ thumbnail.html
 node_modules
 .vercel
 .env*
+output.css
