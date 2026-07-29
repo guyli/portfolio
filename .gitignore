@@ -1,3 +1,6 @@
 linkedin-featured-thumbnail.png
 thumbnail.html
 .DS_Store
+node_modules
+.vercel
+.env*

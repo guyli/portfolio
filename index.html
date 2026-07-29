@@ -70,6 +70,11 @@
     <meta property="og:image" content="profile.JPEG">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
@@ -217,6 +222,23 @@
             background-color: #020617 !important;
             border: 1px solid #334155;
         }
+
+        /* Contact Button Light Mode (Default) */
+        #contact-btn {
+            background-color: #0f172a !important; /* bg-slate-900 */
+            color: #ffffff !important;
+        }
+        #contact-btn:hover {
+            background-color: #1e293b !important; /* hover:bg-slate-800 */
+        }
+
+        /* Contact Button Dark Mode Override when <html class="dark"> */
+        html.dark #contact-btn {
+            background-color: #2563eb !important; /* bg-blue-600 */
+        }
+        html.dark #contact-btn:hover {
+            background-color: #1d4ed8 !important; /* hover:bg-blue-700 */
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
@@ -224,14 +246,16 @@
     <!-- Sticky Navigation Bar -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#portfolio" class="text-md font-bold tracking-tight text-slate-900 hover:text-blue-600 transition">GL</a>
-            <div class="flex items-center gap-6 text-sm font-medium">
+            <a href="#portfolio" class="text-md font-bold tracking-tight text-slate-900 hover:text-blue-600 transition shrink-0">GL</a>
+            <div class="flex items-center gap-2.5 sm:gap-6 text-sm font-medium">
                 <button id="nav-portfolio" onclick="window.location.hash = '#portfolio'" class="text-blue-600 font-semibold transition">Portfolio</button>
                 <button id="nav-blog" onclick="window.location.hash = '#blog'" class="text-slate-500 hover:text-slate-900 transition">Insights Blog</button>
-                <a href="mailto:guylivne5@gmail.com" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs hover:bg-slate-800 transition">Contact</a>
-                <button id="theme-toggle" type="button" aria-label="Toggle theme" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:border-blue-500 transition-colors">
-                    <span id="theme-toggle-icon">🌙</span>
-                    <span id="theme-toggle-text">Dark</span>
+                <button id="contact-btn" type="button" class="px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+                    Contact
+                </button>
+                <button id="theme-toggle" type="button" aria-label="Toggle theme" class="inline-flex items-center justify-center gap-1.5 p-2 sm:px-3 sm:py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:border-blue-500 transition-colors">
+                    <span id="theme-toggle-icon" class="text-sm">🌙</span>
+                    <span id="theme-toggle-text" class="hidden sm:inline">Dark</span>
                 </button>
             </div>
         </div>
@@ -854,6 +878,42 @@
                 </div>
             </div>
         </div>
+
+        <!-- Contact Modal --> 
+        <!-- This modal allows users to send a direct message regarding engineering leadership or advisory opportunities. It includes fields for name, email, and message, and a submit button that triggers the contact form logic. -->
+        <div id="contact-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+            <div class="relative w-full max-w-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl p-6 transition-all">
+                <button id="close-contact-modal" type="button" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white transition text-base font-bold">
+                    ✕
+                </button>
+
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Get in Touch</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mb-5">Send a direct message regarding engineering leadership or advisory opportunities.</p>
+
+                <form id="contact-form" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">Your Name</label>
+                        <input type="text" id="form-name" required minlength="2" pattern="^[A-Za-z\s]{2,}$" title="Name must contain at least 2 letters" placeholder="Luke Skywalker" class="w-full px-3 py-2 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-slate-900 dark:text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">Your Email</label>
+                        <input type="email" id="form-email" required placeholder="luke@rebelalliance.com" class="w-full px-3 py-2 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-slate-900 dark:text-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">Message</label>
+                        <textarea id="form-message" rows="4" required placeholder="Let's connect regarding engineering roles..." class="w-full px-3 py-2 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-slate-900 dark:text-white resize-none"></textarea>
+                    </div>
+
+                    <div id="form-status" class="hidden text-xs font-medium text-center p-2 rounded-lg"></div>
+
+                    <button id="form-submit-btn" type="submit" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-lg transition shadow-md">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -874,7 +934,7 @@
                 themeText.textContent = isDark ? 'Light' : 'Dark';
             }
             
-            // Post message update to active Giscus iframe
+            // Sync Giscus theme
             const giscusFrame = document.querySelector('iframe.giscus-frame');
             if (giscusFrame) {
                 giscusFrame.contentWindow.postMessage({
@@ -1067,6 +1127,113 @@
                 }
             });
         }
+    </script>
+    <script>
+        // Contact Modal and Serverless Form Submission Engine
+        const contactBtn = document.getElementById('contact-btn');
+        const contactModal = document.getElementById('contact-modal');
+        const closeContactModal = document.getElementById('close-contact-modal');
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const formSubmitBtn = document.getElementById('form-submit-btn');
+
+        // Open Modal
+        contactBtn?.addEventListener('click', () => {
+            contactModal?.classList.remove('hidden');
+            formStatus?.classList.add('hidden');
+        });
+
+        // Close Modal
+        closeContactModal?.addEventListener('click', () => {
+            contactModal?.classList.add('hidden');
+        });
+
+        // Close on Backdrop Click
+        contactModal?.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
+                contactModal.classList.add('hidden');
+            }
+        });
+
+        // Form Submit Handler
+        contactForm?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const nameInput = document.getElementById('form-name');
+            const emailInput = document.getElementById('form-email');
+            const messageInput = document.getElementById('form-message');
+
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const message = messageInput.value.trim();
+
+            // Client-Side Validation Rules
+            const nameRegex = /^[A-Za-z\s]{2,}$/;
+            if (!nameRegex.test(name)) {
+                formStatus.textContent = 'Please enter a valid name with at least 2 letters.';
+                formStatus.className = 'text-xs font-medium text-center p-2 rounded-lg bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 block';
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                formStatus.textContent = 'Please enter a valid email address format.';
+                formStatus.className = 'text-xs font-medium text-center p-2 rounded-lg bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 block';
+                return;
+            }
+
+            // Disable button while sending
+            formSubmitBtn.disabled = true;
+            formSubmitBtn.textContent = 'Sending...';
+            formSubmitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            formStatus.classList.add('hidden');
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    formStatus.textContent = 'Message sent successfully! I will get back to you shortly.';
+                    formStatus.className = 'text-xs font-medium text-center p-2 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 block';
+                    contactForm.reset();
+
+                    // Keep button disabled after success until modal closes
+                    formSubmitBtn.disabled = true;
+                    formSubmitBtn.textContent = 'Sent';
+
+                    setTimeout(() => {
+                        contactModal?.classList.add('hidden');
+                        // Reset button state after modal closes
+                        formSubmitBtn.disabled = false;
+                        formSubmitBtn.textContent = 'Send Message';
+                        formSubmitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    }, 2500);
+                } else {
+                    throw new Error(data.error || 'Failed to send message.');
+                }
+            } catch (err) {
+                formStatus.textContent = err.message || 'An error occurred. Please try again.';
+                formStatus.className = 'text-xs font-medium text-center p-2 rounded-lg bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 block';
+
+                // Keep button disabled after error response
+                formSubmitBtn.disabled = true;
+                formSubmitBtn.textContent = 'Submission Error';
+
+                // Re-enable button if user clicks into any input field to edit
+                const reEnableButton = () => {
+                    formSubmitBtn.disabled = false;
+                    formSubmitBtn.textContent = 'Send Message';
+                    formSubmitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    contactForm.removeEventListener('input', reEnableButton);
+                };
+                contactForm.addEventListener('input', reEnableButton);
+            }
+        });
     </script>
 </body>
 </html>
