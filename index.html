@@ -76,6 +76,148 @@
     </style>
     <!-- Favicon Element Links -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script>
+        // Light Mode Default: Only enable dark mode if explicitly saved by user click
+        if (localStorage.theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <style>
+        /* Precision Dark Mode Overrides */
+        html.dark body {
+            background-color: #0f172a !important;
+            color: #f1f5f9 !important;
+        }
+
+        /* Nav Header & Core Section Backgrounds */
+        html.dark nav,
+        html.dark #view-portfolio > section,
+        html.dark #blog-list > article,
+        html.dark #article-view {
+            color: #e2e8f0;
+        }
+
+        /* Force GL Navigation Square to stay Bright Blue with White Text */
+        html.dark nav div.bg-blue-600,
+        html.dark nav div.bg-slate-900,
+        html.dark aside div.bg-blue-600,
+        html.dark .w-8.h-8.bg-blue-600,
+        html.dark .w-10.h-10.bg-blue-600 {
+            background-color: #2563eb !important; /* Blue 600 */
+            color: #ffffff;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        html.dark .hover\:text-blue-600:hover {
+            color: #2563eb !important;
+            color: rgb(37 99 235 / var(--tw-text-opacity)) !important;
+        }
+
+        /* Force All Chart Container Headings & Card Titles to White */
+        html.dark div.text-slate-900,
+        html.dark h3.text-slate-900,
+        html.dark h4.text-slate-900,
+        html.dark .font-bold.text-slate-900 {
+            color: #f8fafc; /* White / Slate 50 */
+        }
+
+        /* Preserve explicit Tailwind color utilities in dark mode */
+        html.dark span.text-emerald-400,
+        html.dark .text-emerald-400 {
+            color: #34d399 !important; /* Tailwind Emerald 400 */
+        }
+
+        html.dark span.text-blue-400,
+        html.dark .text-blue-400 {
+            color: #60a5fa !important; /* Tailwind Blue 400 */
+        }
+
+        html.dark span.text-amber-400,
+        html.dark .text-amber-400 {
+            color: #fbbf24 !important; /* Tailwind Amber 400 */
+        }
+
+        html.dark span.text-red-400,
+        html.dark .text-red-400 {
+            color: #f87171 !important; /* Tailwind Red 400 */
+        }
+
+        html.dark span.text-purple-400,
+        html.dark .text-purple-400 {
+            color: #a78bfa !important; /* Tailwind Purple 400 */
+        }
+
+        html.dark span.text-pink-400,
+        html.dark .text-pink-400 {
+            color: #f472b6 !important; /* Tailwind Pink 400 */
+        }
+
+        html.dark span.text-indigo-400,
+        html.dark .text-indigo-400 {
+            color: #818cf8 !important; /* Tailwind Indigo 400 */
+        }
+
+        html.dark span.text-cyan-400,
+        html.dark .text-cyan-400 {
+            color: #22d3ee !important; /* Tailwind Cyan 400 */
+        }
+
+
+        /* Dark Mode Hover Override for Inactive Navigation IDs */
+        html.dark #nav-portfolio:not(.text-blue-600):not(.text-blue-500):not(.active):hover,
+        html.dark #nav-blog:not(.text-blue-600):not(.text-blue-500):not(.active):hover {
+            color: #ffffff !important;
+        }
+
+        /* Sticky Nav Bar */
+        html.dark nav.sticky {
+            background-color: rgba(15, 23, 42, 0.85) !important;
+            border-color: #334155 !important;
+        }
+
+        /* Nav Logo "GL" Container Fix */
+        html.dark nav a .bg-slate-900,
+        html.dark nav div .bg-blue-600 {
+            background-color: #2563eb !important;
+            color: #ffffff !important;
+        }
+
+        /* Card Containers (Technical Expertise, Projects, Charts) */
+        html.dark .border-slate-200,
+        html.dark .border-slate-100 {
+            border-color: #334155 !important;
+        }
+
+        html.dark .bg-white {
+            background-color: #1e293b !important;
+        }
+
+        /* Skill Pills & Sub-Tag Containers */
+        html.dark .bg-slate-100,
+        html.dark .bg-slate-50 {
+            background-color: #334155 !important;
+            color: #f1f5f9 !important;
+        }
+
+        /* Specific Text Fixes for Headings & Descriptions */
+        html.dark h1, html.dark h2, html.dark h3, html.dark h4 {
+            color: #f8fafc !important;
+        }
+
+        html.dark p, html.dark span:not(.bg-blue-600) {
+            color: #cbd5e1;
+        }
+
+        /* Code & Monospace Charts */
+        html.dark .bg-slate-900 {
+            background-color: #020617 !important;
+            border: 1px solid #334155;
+        }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
 
@@ -87,6 +229,10 @@
                 <button id="nav-portfolio" onclick="window.location.hash = '#portfolio'" class="text-blue-600 font-semibold transition">Portfolio</button>
                 <button id="nav-blog" onclick="window.location.hash = '#blog'" class="text-slate-500 hover:text-slate-900 transition">Insights Blog</button>
                 <a href="mailto:guylivne5@gmail.com" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs hover:bg-slate-800 transition">Contact</a>
+                <button id="theme-toggle" type="button" aria-label="Toggle theme" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:border-blue-500 transition-colors">
+                    <span id="theme-toggle-icon">🌙</span>
+                    <span id="theme-toggle-text">Dark</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -225,7 +371,7 @@
                             <span class="text-xs font-medium text-slate-400">Hagerty</span>
                         </div>
                         <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Directed customer facing experience architectures, decoupling legacy monostages into a secure Next.js Backend for Frontend (BFF) layout deployed across decentralized AWS Lambda layers. Heightened customer digital interaction footprints by 27 percent.
+                            Directed customer facing experience architectures, decoupling legacy monostages into a secure Next.js Backend for Frontend (BFF) layout deployed across decentralized AWS Lambda layers. Heightened customer digital interaction footprints by 27%.
                         </p>
                         <div class="flex flex-wrap gap-1.5">
                             <span class="px-2 py-0.5 text-xs bg-slate-50 text-slate-500 border border-slate-200 rounded">Next.js</span>
@@ -261,7 +407,7 @@
                 <!-- Post 5 Link -->
                 <article class="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-500 transition cursor-pointer" onclick="window.location.hash = '#blog/post-5'">
                     <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">#05 Architecture</span>
-                    <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">How We Increased Digital Engagement by 27 Percent Using a Next.js BFF Architecture</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1 hover:text-blue-600 transition">How We Increased Digital Engagement by 27% Using a Next.js BFF Architecture</h3>
                     <p class="text-slate-600 text-sm mt-2 line-clamp-2">Exploring how splitting a monolithic frontend into independent Next.js architectures using the Backend for Frontend design pattern streamlines multi team deliveries and bypasses complex network hurdles securely.</p>
                     <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
                         <span>3 min read</span>
@@ -340,7 +486,7 @@
 
                     <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
                         <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-blue-500"></span> Bar Chart: Security Interception Latency Under Varied Guardrail Architectures
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span> Security Interception Latency Under Varied Guardrail Architectures
                         </div>
                         <div class="space-y-3 font-mono text-xs">
                             <div>
@@ -407,7 +553,7 @@
                 
                 <!-- Full Content Article 5 -->
                 <div id="post-5" data-number="#05" data-category="Architecture" class="hidden space-y-6 prose max-w-none text-slate-600 leading-relaxed font-light text-sm md:text-base">
-                    <h1 class="text-3xl font-bold text-slate-900">How We Increased Digital Engagement by 27 Percent Using a Next.js BFF Architecture</h1>
+                    <h1 class="text-3xl font-bold text-slate-900">How We Increased Digital Engagement by 27% Using a Next.js BFF Architecture</h1>
                     <p class="text-slate-500 text-sm">Published July 2026 By Guy Livne</p>
                     <hr class="border-slate-200">
                     
@@ -417,12 +563,12 @@
 
                     <!-- GRAPH 5A: LINE PLOT -->
                     <div class="my-8 p-6 bg-slate-900 text-slate-200 rounded-xl font-mono text-xs shadow-inner">
-                        <div class="text-center font-bold text-blue-400 mb-4 uppercase tracking-wider">Line Plot: Digital Engagement Trends Post BFF Edge Migration</div>
+                        <div class="text-center font-bold text-blue-400 mb-4 uppercase tracking-wider">Digital Engagement Trends Post BFF Edge Migration</div>
                         <div class="space-y-2">
-                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 1 Base</span> <span class="text-blue-500 font-bold">o</span><span class="text-slate-800">======================================</span> <span class="text-slate-400">100 Percent Baseline</span></div>
-                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 2 Beta</span> <span class="text-slate-700">========</span><span class="text-blue-400 font-bold">o</span><span class="text-slate-800">==============================</span> <span class="text-slate-400">108 Percent Proxy Verified</span></div>
-                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 3 Live</span> <span class="text-slate-700">==================</span><span class="text-cyan-400 font-bold">o</span><span class="text-slate-800">====================</span> <span class="text-slate-400">119 Percent Edge Router</span></div>
-                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 4 Peak</span> <span class="text-slate-700">============================</span><span class="text-emerald-400 font-bold">o</span><span class="text-slate-800">==========</span> <span class="text-slate-300">127 Percent Optimization</span></div>
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 1 Base</span> <span class="text-blue-400 font-bold">o</span><span class="text-slate-800">======================================</span> <span class="text-slate-400">100% Baseline</span></div>
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 2 Beta</span> <span class="text-slate-700">========</span><span class="text-blue-400 font-bold">o</span><span class="text-slate-800">==============================</span> <span class="text-slate-400">108% Proxy Verified</span></div>
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 3 Live</span> <span class="text-slate-700">==================</span><span class="text-cyan-400 font-bold">o</span><span class="text-slate-800">====================</span> <span class="text-slate-400">119% Edge Router</span></div>
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Sprint 4 Peak</span> <span class="text-slate-700">============================</span><span class="text-emerald-400 font-bold">o</span><span class="text-slate-800">==========</span> <span class="text-slate-300">127% Optimization</span></div>
                         </div>
                     </div>
 
@@ -431,7 +577,7 @@
                     <!-- GRAPH 5B: BAR CHART -->
                     <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
                         <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-blue-500"></span> Bar Chart: Network Response Latency Reductions in Milliseconds
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span> Network Response Latency Reductions in Milliseconds
                         </div>
                         <div class="space-y-3 font-mono text-xs">
                             <div>
@@ -466,10 +612,10 @@
                     <!-- GRAPH 4A: HISTOGRAM -->
                     <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
                         <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-green-500"></span> Histogram: Frequency Distribution of Prompt Length and Token Filtering Speeds
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span> Frequency Distribution of Prompt Length and Token Filtering Speeds
                         </div>
                         <div class="space-y-2 font-mono text-xs">
-                            <div class="flex items-center"><span class="w-24 text-slate-400">Small Tokens</span> <div class="bg-green-500 h-4 rounded ml-2" style="width: 95%"></div> <span class="ml-2 text-slate-500">95k requests</span></div>
+                            <div class="flex items-center"><span class="w-24 text-slate-400 shrink-0">Small Tokens</span> <div class="flex-1 h-4 rounded overflow-hidden ml-2"><div class="bg-green-500 h-full rounded" style="width: 95%"></div></div> <span class="w-24 text-slate-500 shrink-0 text-right ml-2">95k requests</span></div>
                             <div class="flex items-center"><span class="w-24 text-slate-400">Medium Tokens</span> <div class="bg-emerald-500 h-4 rounded ml-2" style="width: 65%"></div> <span class="ml-2 text-slate-500">65k requests</span></div>
                             <div class="flex items-center"><span class="w-24 text-slate-400">Large Tokens</span> <div class="bg-teal-500 h-4 rounded ml-2" style="width: 30%"></div> <span class="ml-2 text-slate-500">30k requests</span></div>
                             <div class="flex items-center"><span class="w-24 text-slate-400">Huge Tokens</span> <div class="bg-blue-500 h-4 rounded ml-2" style="width: 10%"></div> <span class="ml-2 text-slate-500">10k requests</span></div>
@@ -540,18 +686,18 @@
 
                     <!-- GRAPH 3A: HISTOGRAM -->
                     <div class="my-8 p-6 bg-slate-900 text-slate-300 rounded-xl font-mono text-xs">
-                        <div class="text-center font-bold text-green-400 mb-4 uppercase tracking-wider">Histogram: Phased Migration Target Crossover Volumetric Loading</div>
+                        <div class="text-center font-bold text-green-400 mb-4 uppercase tracking-wider">Phased Migration Target Crossover Volumetric Loading</div>
                         <div class="space-y-3">
                             <div>
-                                <div class="flex justify-between text-[10px] mb-1 text-slate-400"><span>Phase 1 Ingestion Pipelines</span> <span>100 Percent Traffic</span></div>
+                                <div class="flex justify-between text-[10px] mb-1 text-slate-400"><span>Phase 1 Ingestion Pipelines</span> <span>100% Traffic</span></div>
                                 <div class="w-full bg-slate-800 h-3 rounded"><div class="bg-emerald-500 h-3 rounded" style="width: 100%"></div></div>
                             </div>
                             <div>
-                                <div class="flex justify-between text-[10px] mb-1 text-slate-400"><span>Phase 2 Base Pricing Simulation</span> <span>75 Percent Traffic</span></div>
+                                <div class="flex justify-between text-[10px] mb-1 text-slate-400"><span>Phase 2 Base Pricing Simulation</span> <span>75% Traffic</span></div>
                                 <div class="w-full bg-slate-800 h-3 rounded"><div class="bg-teal-500 h-3 rounded" style="width: 75%"></div></div>
                             </div>
                             <div>
-                                <div class="flex justify-between text-[10px] mb-1 text-slate-400"><span>Phase 3 Real Time Approvals Ledger</span> <span>25 Percent Traffic</span></div>
+                                <div class="flex justify-between text-[10px] mb-1 text-slate-400"><span>Phase 3 Real Time Approvals Ledger</span> <span>25% Traffic</span></div>
                                 <div class="w-full bg-slate-800 h-3 rounded"><div class="bg-blue-500 h-3 rounded" style="width: 25%"></div></div>
                             </div>
                         </div>
@@ -563,11 +709,11 @@
                     <!-- GRAPH 3B: LINE CHART -->
                     <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
                         <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-teal-500"></span> Line Plot: Compute Stability Variance Under System Load Scaling
+                            <span class="w-2 h-2 rounded-full bg-teal-500"></span> Compute Stability Variance Under System Load Scaling
                         </div>
                         <div class="space-y-2 font-mono text-xs text-slate-600">
-                            <div class="flex items-center"><span class="w-32 text-slate-500">Monolith Load</span> <span class="text-red-500 font-bold">o</span><span class="text-slate-200">==================</span> <span class="text-red-500 font-bold">Outage Peak</span></div>
-                            <div class="flex items-center"><span class="w-32 text-slate-500">Microservice Load</span> <span class="text-slate-200">==================</span><span class="text-emerald-500 font-bold">o</span> <span class="text-emerald-600 font-bold">Fluid Stable</span></div>
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Monolith Load</span> <span class="text-red-400 font-bold">o</span><span class="text-slate-200">==================</span> <span class="text-red-400 font-bold">Outage Peak</span></div>
+                            <div class="flex items-center"><span class="w-32 text-slate-500">Microservice Load</span> <span class="text-slate-200">==================</span><span class="text-emerald-400 font-bold">o</span> <span class="text-emerald-400 font-bold">Fluid Stable</span></div>
                         </div>
                     </div>
                     
@@ -592,7 +738,7 @@
                     <!-- GRAPH 2A: BAR CHART -->
                     <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
                         <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-purple-500"></span> Bar Chart: Time Investment Savings Breakdown Per Feature Lifecycle
+                            <span class="w-2 h-2 rounded-full bg-purple-500"></span> Time Investment Savings Breakdown Per Feature Lifecycle
                         </div>
                         <div class="grid grid-cols-2 gap-4 font-mono text-xs">
                             <div class="p-3 bg-slate-50 rounded">
@@ -601,7 +747,7 @@
                             </div>
                             <div class="p-3 bg-indigo-50/50 rounded">
                                 <div class="text-indigo-600 font-bold">With Shared Module Framework</div>
-                                <div class="text-xl font-bold text-emerald-600 mt-1">4 Days Avg</div>
+                                <div class="text-xl font-bold text-emerald-400 mt-1">4 Days Avg</div>
                             </div>
                         </div>
                     </div>
@@ -666,7 +812,7 @@
 
                     <!-- GRAPH 1A: LINE CHART -->
                     <div class="my-8 p-6 bg-slate-900 text-slate-300 rounded-xl font-mono text-[11px] shadow-lg">
-                        <div class="text-center font-bold text-blue-400 mb-4 uppercase tracking-wider">Line Plot: Technical Debt Paydown Trends Across Annual Quarters</div>
+                        <div class="text-center font-bold text-blue-400 mb-4 uppercase tracking-wider">Technical Debt Paydown Trends Across Annual Quarters</div>
                         <div class="space-y-1.5">
                             <div class="flex items-center"><span class="w-24 text-slate-500">Quarter 1</span> <span class="text-red-400 font-bold">o</span><span class="text-slate-700">=================================</span> <span class="text-slate-400">Velocity Low</span></div>
                             <div class="flex items-center"><span class="w-24 text-slate-500">Quarter 2</span> <span class="text-slate-600">========</span><span class="text-yellow-400 font-bold">o</span><span class="text-slate-700">=========================</span> <span class="text-slate-400">Velocity Moderate</span></div>
@@ -681,7 +827,7 @@
                     <!-- GRAPH 1B: BAR CHART -->
                     <div class="my-8 p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
                         <div class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Bar Chart: Bottom Line Revenue Scaling Achieved Via Refactoring
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Bottom Line Revenue Scaling Achieved Via Refactoring
                         </div>
                         <div class="space-y-3 font-mono text-xs">
                             <div>
@@ -717,6 +863,38 @@
 
     <!-- Interactive Navigation Tab Router Engine script with State Syncing Logic -->
     <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-toggle-icon');
+        const themeText = document.getElementById('theme-toggle-text');
+
+        function syncThemeUI() {
+            const isDark = document.documentElement.classList.contains('dark');
+            if (themeIcon && themeText) {
+                themeIcon.textContent = isDark ? '☀️' : '🌙';
+                themeText.textContent = isDark ? 'Light' : 'Dark';
+            }
+            
+            // Post message update to active Giscus iframe
+            const giscusFrame = document.querySelector('iframe.giscus-frame');
+            if (giscusFrame) {
+                giscusFrame.contentWindow.postMessage({
+                    giscus: { setConfig: { theme: isDark ? 'dark' : 'light' } }
+                }, 'https://giscus.app');
+            }
+        }
+
+        syncThemeUI();
+
+        themeToggleBtn?.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+            syncThemeUI();
+        });
         // Centralized State-Driven Router Engine
         function handleRouting() {
             // Reset to default home page branding indicators
@@ -840,7 +1018,10 @@
             script.setAttribute('data-reactions-enabled', "1");
             script.setAttribute('data-emit-metadata', "0");
             script.setAttribute('data-input-position', "top");
-            script.setAttribute('data-theme', "light");
+
+            const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            script.setAttribute('data-theme', currentTheme);
+
             script.setAttribute('data-lang', "en");
             script.crossOrigin = "anonymous";
             script.async = true;
