@@ -1115,6 +1115,18 @@
 
             const hash = window.location.hash || '#portfolio';
 
+            // Check if the hash starts with #blog/
+            if (hash.startsWith('#blog/')) {
+                const postId = hash.replace('#blog/', '');
+                const targetPost = document.getElementById(postId);
+
+                // If post ID is missing or doesn't exist in DOM, fallback to #blog
+                if (!postId || !targetPost) {
+                    window.location.hash = '#blog';
+                    return;
+                }
+            }
+
             const portfolioView = document.getElementById('view-portfolio');
             const blogView = document.getElementById('view-blog');
             const blogList = document.getElementById('blog-list');
