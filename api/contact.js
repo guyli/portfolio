@@ -38,11 +38,11 @@ export default async function handler(req, res) {
             from: `"Portfolio Contact Form" <${process.env.ZOHO_USER}>`,
             to: process.env.ZOHO_USER, // Sends to guy@guylivne.com
             replyTo: email, // Clicking "Reply" in Gmail replies directly to the sender
-            subject: `New guylivne.com Inquiry from ${name}`,
+            subject: `New Inquiry to guylivne.com from ${name}`,
             text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
             html: `
                 <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
-                    <h2 style="color: #2563eb;">New guylivne.com Message</h2>
+                    <h2 style="color: #2563eb;">New Message to guylivne.com</h2>
                     <p><strong>Name:</strong> ${name}</p>
                     <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
                     <hr style="border: 0; border-top: 1px solid #eee;" />
