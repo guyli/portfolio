@@ -14,24 +14,35 @@ export default async function handler(req, res) {
     }
 
     // Configure Nodemailer transporter with Gmail
+    // const transporter = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     auth: {
+    //         user: process.env.MY_GMAIL_USER,
+    //         pass: process.env.MY_GMAIL_APP_PASS,
+    //     },
+    // });
+
+    // Configure Nodemailer transporter with Zoho Mail
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtppro.zoho.com', // use 'smtp.zoho.com' if on standard personal tier
+        port: 465,
+        secure: true, // SSL
         auth: {
-            user: process.env.MY_GMAIL_USER,
-            pass: process.env.MY_GMAIL_APP_PASS,
+            user: process.env.ZOHO_USER, // guy@guylivne.com
+            pass: process.env.ZOHO_APP_PASS,
         },
     });
 
     try {
         await transporter.sendMail({
-            from: `"Portfolio Contact Form" <${process.env.MY_GMAIL_USER}>`,
-            to: process.env.MY_GMAIL_USER, // Sends to guy@guylivne.com
+            from: `"Portfolio Contact Form" <${process.env.ZOHO_USER}>`,
+            to: process.env.ZOHO_USER, // Sends to guy@guylivne.com
             replyTo: email, // Clicking "Reply" in Gmail replies directly to the sender
-            subject: `New Portfolio Inquiry from ${name}`,
+            subject: `New guylivne.com Inquiry from ${name}`,
             text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
             html: `
                 <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
-                    <h2 style="color: #2563eb;">New Portfolio Message</h2>
+                    <h2 style="color: #2563eb;">New guylivne.com Message</h2>
                     <p><strong>Name:</strong> ${name}</p>
                     <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
                     <hr style="border: 0; border-top: 1px solid #eee;" />
