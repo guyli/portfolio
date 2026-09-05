@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     try {
         await transporter.sendMail({
             from: `"Portfolio Contact Form" <${process.env.MY_GMAIL_USER}>`,
-            to: process.env.MY_GMAIL_USER, // Sends to guylivne5@gmail.com
+            to: process.env.MY_GMAIL_USER, // Sends to guy@guylivne.com
             replyTo: email, // Clicking "Reply" in Gmail replies directly to the sender
             subject: `New Portfolio Inquiry from ${name}`,
             text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
