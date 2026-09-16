@@ -1,5 +1,17 @@
 {
   "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/work/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!.*\\.).*)",
